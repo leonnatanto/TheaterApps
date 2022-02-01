@@ -11,9 +11,11 @@ import SquareScreen from './src/screens/SquareScreen';
 import TextScreen from './src/screens/TextScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import MovieDetail from './src/screens/MovieDetailScreen';
+import SplashScreen from './src/screens/SplashScreen';
 
 const navigator = createStackNavigator(
   {
+    Splash: SplashScreen,
     OnBoarding: OnBoardingScreen,
     Home: HomeScreen,
     Components: ComponentsScreen,
@@ -26,7 +28,7 @@ const navigator = createStackNavigator(
     MovieDetail: MovieDetail,
   },
   {
-    initialRouteName: 'OnBoarding',
+    initialRouteName: 'Splash',
     defaultNavigationOptions: {
       title: 'App',
     },

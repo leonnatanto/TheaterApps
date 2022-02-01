@@ -4,9 +4,9 @@ import tmdb from '../api/tmdb';
 import MainHeader from '../components/MainHeader';
 
 const MovieDetailScreen = props => {
-    const [ result, setResult ] = useState([]);
-    
-    useEffect( () => {
+    const [result, setResult] = useState([]);
+
+    useEffect(() => {
         //console.log(props.navigation.getParam('id'))
         async function fetchData() {
             try {
@@ -14,7 +14,7 @@ const MovieDetailScreen = props => {
                     params: {
                         api_key: 'a7d50ff6d6f3c1a07bbe5e065dd8fd50'
                     }
-                } );
+                });
                 setResult(response.data);
                 //console.log(response.data)
             } catch (error) {
@@ -22,13 +22,13 @@ const MovieDetailScreen = props => {
             }
         }
         fetchData();
-    }, [] );
+    }, []);
 
     return (
         <ScrollView style={styles.container}>
-            <MainHeader text={"Movie Detail"} backFunction={() => props.navigation.goBack()}/>
+            <MainHeader text={"Movie Detail"} backFunction={() => props.navigation.goBack()} />
             <View style={styles.imageContainer}>
-                <Image style={styles.image} source={{ uri: 'https://image.tmdb.org/t/p/w500/' + result.poster_path }}/>
+                <Image style={styles.image} source={{ uri: 'https://image.tmdb.org/t/p/w500/' + result.poster_path }} />
 
             </View>
             <Text style={styles.title}>Title</Text>
